@@ -14,9 +14,6 @@
 <script>
     export default {
         props:['slug','isfav'],
-        mounted() {
-            console.log("mounted favorite");
-        },
         methods: {
             favoriteToggle: function(slug) {
                 axios.defaults.withCredentials = true;
@@ -24,10 +21,8 @@
                     axios
                         .get("/api/favorite/" + slug)
                         .then(response => {
-                            console.log(response.data);
                         })
                         .catch(function (error) {
-                            console.log(error);
                         });
                 });
                 this.isfav = !this.isfav;

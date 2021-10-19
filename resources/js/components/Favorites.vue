@@ -28,22 +28,18 @@
             };
         },
         mounted() {
-            console.log("mounted favorites");
             this.userFavorites();
         },
         methods: {
             userFavorites: function() {
-                console.log('userFavorites');
                 axios.defaults.withCredentials = true;
                 axios.get('/sanctum/csrf-cookie').then(response => {
                     axios
                         .get("/api/favorites")
                         .then(response => {
                             this.meals = response.data;
-                            console.log(response.data);
                         })
                         .catch(function (error) {
-                            console.log(error);
                         });
                 });
             }

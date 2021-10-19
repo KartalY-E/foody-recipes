@@ -42,7 +42,6 @@ import Favorite from './Favorite.vue';
             };
         },
         mounted() {
-            console.log("mounted front");
             this.randomMeals();
         },
         methods: {
@@ -53,10 +52,8 @@ import Favorite from './Favorite.vue';
                     })
                     .then(response => {
                         this.meals = response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
-                        console.log(error);
                     });
             },
             randomMeals: function () {
@@ -64,10 +61,8 @@ import Favorite from './Favorite.vue';
                     .get("/api/random")
                     .then(response => {
                         this.meals = response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
-                        console.log(error);
                     });
             },
             favoriteToggle: function(slug) {
@@ -76,16 +71,8 @@ import Favorite from './Favorite.vue';
                     axios
                         .get("/api/favorite/" + slug)
                         .then(response => {
-                            
-                            if (response.data) {
-                                document.getElementById("myDiv").style.color = "pink";
-                            }else{
-                                document.getElementById("myDiv").style.color = "black";
-                            }
-                            console.log(response.data);
                         })
                         .catch(function (error) {
-                            console.log(error);
                         });
                 });
             }

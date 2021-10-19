@@ -53,7 +53,6 @@ import Favorite from './Favorite.vue';
         mounted() {
             this.allCategories();
             this.defaultMeals();
-            console.log("mounted front");
         },
         methods: {
             searchMeal: function () {
@@ -63,10 +62,8 @@ import Favorite from './Favorite.vue';
                     })
                     .then(response => {
                         this.meals = response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
-                        console.log(error);
                     });
             },
             defaultMeals: function () {
@@ -74,10 +71,8 @@ import Favorite from './Favorite.vue';
                     .get("/api/random")
                     .then(response => {
                         this.meals = response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
-                        console.log(error);
                     });
             },
             // getting all categories
@@ -86,25 +81,20 @@ import Favorite from './Favorite.vue';
                     .get("/api/categories")
                     .then(response => {
                         this.categories = response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
-                        console.log(error);
                     });
             },
             // getting all categories
             selectCategories: function (searchCategory) {
-                console.log(searchCategory);
                 axios
                     .post("/api/search-categories", {
                         searchCategory: searchCategory
                     })
                     .then(response => {
                         this.meals = response.data;
-                        console.log(response.data);
                     })
                     .catch(function (error) {
-                        console.log(error);
                     });
             }
         }

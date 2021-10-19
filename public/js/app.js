@@ -4080,7 +4080,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.allCategories();
     this.defaultMeals();
-    console.log("mounted front");
   },
   methods: {
     searchMeal: function searchMeal() {
@@ -4090,20 +4089,14 @@ __webpack_require__.r(__webpack_exports__);
         search: this.search
       }).then(function (response) {
         _this.meals = response.data;
-        console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      })["catch"](function (error) {});
     },
     defaultMeals: function defaultMeals() {
       var _this2 = this;
 
       axios.get("/api/random").then(function (response) {
         _this2.meals = response.data;
-        console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      })["catch"](function (error) {});
     },
     // getting all categories
     allCategories: function allCategories() {
@@ -4111,24 +4104,17 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/categories").then(function (response) {
         _this3.categories = response.data;
-        console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      })["catch"](function (error) {});
     },
     // getting all categories
     selectCategories: function selectCategories(searchCategory) {
       var _this4 = this;
 
-      console.log(searchCategory);
       axios.post("/api/search-categories", {
         searchCategory: searchCategory
       }).then(function (response) {
         _this4.meals = response.data;
-        console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      })["catch"](function (error) {});
     }
   }
 });
@@ -4161,18 +4147,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['slug', 'isfav'],
-  mounted: function mounted() {
-    console.log("mounted favorite");
-  },
   methods: {
     favoriteToggle: function favoriteToggle(slug) {
       axios.defaults.withCredentials = true;
       axios.get('/sanctum/csrf-cookie').then(function (response) {
-        axios.get("/api/favorite/" + slug).then(function (response) {
-          console.log(response.data);
-        })["catch"](function (error) {
-          console.log(error);
-        });
+        axios.get("/api/favorite/" + slug).then(function (response) {})["catch"](function (error) {});
       });
       this.isfav = !this.isfav;
       this.$emit('userFavorites', '');
@@ -4222,22 +4201,17 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    console.log("mounted favorites");
     this.userFavorites();
   },
   methods: {
     userFavorites: function userFavorites() {
       var _this = this;
 
-      console.log('userFavorites');
       axios.defaults.withCredentials = true;
       axios.get('/sanctum/csrf-cookie').then(function (response) {
         axios.get("/api/favorites").then(function (response) {
           _this.meals = response.data;
-          console.log(response.data);
-        })["catch"](function (error) {
-          console.log(error);
-        });
+        })["catch"](function (error) {});
       });
     }
   }
@@ -4302,7 +4276,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    console.log("mounted front");
     this.randomMeals();
   },
   methods: {
@@ -4313,35 +4286,19 @@ __webpack_require__.r(__webpack_exports__);
         search: this.search
       }).then(function (response) {
         _this.meals = response.data;
-        console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      })["catch"](function (error) {});
     },
     randomMeals: function randomMeals() {
       var _this2 = this;
 
       axios.get("/api/random").then(function (response) {
         _this2.meals = response.data;
-        console.log(response.data);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      })["catch"](function (error) {});
     },
     favoriteToggle: function favoriteToggle(slug) {
       axios.defaults.withCredentials = true;
       axios.get('/sanctum/csrf-cookie').then(function (response) {
-        axios.get("/api/favorite/" + slug).then(function (response) {
-          if (response.data) {
-            document.getElementById("myDiv").style.color = "pink";
-          } else {
-            document.getElementById("myDiv").style.color = "black";
-          }
-
-          console.log(response.data);
-        })["catch"](function (error) {
-          console.log(error);
-        });
+        axios.get("/api/favorite/" + slug).then(function (response) {})["catch"](function (error) {});
       });
     }
   }
