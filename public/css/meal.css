@@ -1,0 +1,187 @@
+body {
+    background-color: whitesmoke;
+}
+
+/* TEXT & SVG */
+#nav-img {
+    max-height: 300px;
+    margin: 30px;
+}
+
+.title {
+    width: 40%;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 30px;
+    padding-left: 40px;
+}
+
+#eatingSvg {
+    width: 60%;
+}
+
+#eatingSvg>img {
+    width: auto;
+    height: 100%;
+}
+
+
+
+/* SEARCH  */
+
+#searchBox {
+    max-width: 600px;
+    vertical-align: auto;
+    border-radius: 30px;
+    border: 2px black solid;
+    padding: 5px;
+}
+
+#searchBox input {
+    background-color: transparent;
+    border: transparent;
+    width: 100%;
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#searchBox input:focus {
+    outline: none;
+}
+
+#searchBox button {
+    margin-left: auto;
+    align-self: right;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    background-color: black;
+    color: whitesmoke;
+    border: transparent;
+}
+
+#searchIcon {
+    color: black;
+    stroke-width: 2px;
+    width: 30px;
+}
+
+/* MEALS HOME */
+.meal-card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.meal-card>a>img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top: -75px;
+    margin: auto;
+}
+
+.meal-card p {
+    padding-top: 10px;
+    position: relative;
+    top: -75px;
+    text-align: center;
+}
+
+/* SINGLE MEAL */
+#single-meal {
+    background-color: black;
+    color: white;
+    overflow: hidden;
+}
+
+#single-meal>img {
+    position: absolute;
+    top: -50px;
+    right: -30px;
+    width: auto;
+    max-width: 350px;
+    height: auto;
+}
+
+#single-meal h1 {
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+#single-meal h3 {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.youtube {
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    #nav-img {
+        display: none;
+    }
+}
+
+/* FAVORITES */
+.sub-title {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 2rem;
+    margin-top: 0px;
+}
+
+
+
+#favoriteIcon>a>svg {
+    display: inline;
+    width: 40px;
+    height: 40px;
+    fill: white;
+    padding: 3px;
+}
+
+#favoriteIconBlack {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: whitesmoke;
+    padding: 3px;
+    border-radius: 5px;
+    fill: black;
+}
+
+#favoriteIconBlack>a>svg {
+    width: 30px;
+    height: 30px;
+    fill: black;
+
+}
+
+
+/* CATEGORIES */
+.category {
+    padding: 5px;
+    border-radius: 5px;
+    vertical-align: auto;
+    border-radius: 30px;
+    border: 2px black solid;
+    width: 130px;
+    margin: 3px;
+}
+
+#category-select {
+    border-radius: 30px;
+    border: 2px black solid;
+    padding-left: 20px;
+    padding-right: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+}
