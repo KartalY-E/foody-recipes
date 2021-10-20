@@ -17,3 +17,6 @@ Small project showing meals from around the world.
 #### Users can
 
 -   Add meals to Favorites page
+    <div align="center">
+        <img src="public\storage\images\homeFoody.jpg" width="60%">
+    </div>
